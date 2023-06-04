@@ -5,9 +5,8 @@ const dbConnection = async () => {
     await mongoose.connect(process.env.DB_CONNECTION);
     console.log("Connected to database");
   } catch (error) {
-    console.log(process.env.DB_CONNECTION);
     console.log(error);
-    throw new Error("Database initialization error");
+    throw new Error("Database initialization error", process.env.DB_CONNECTION);
   }
 };
 
