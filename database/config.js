@@ -6,7 +6,7 @@ const dbConnection = async () => {
     console.log("Connected to database");
   } catch (error) {
     console.log(error);
-    throw new Error("Database initialization error", process.env.DB_CONNECTION);
+    throw new Error("Database initialization error");
   }
 };
 
