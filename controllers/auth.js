@@ -31,7 +31,7 @@ const createUser = async (req, res = response) => {
 
     res.status(500).json({
       ok: true,
-      msg: "Please, contact the or",
+      msg: "Please, contact the administrator",
     });
   }
 };
@@ -84,7 +84,7 @@ const renewToken = async (req, res = response) => {
   // JWT generation
   const token = await generateJWT(uid, name);
 
-  res.json({ ok: true, token });
+  res.json({ ok: true, uid, name, token });
 };
 
 module.exports = { createUser, loginUser, renewToken };
